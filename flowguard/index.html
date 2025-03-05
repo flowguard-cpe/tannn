@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FlowGuard Dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom dashboard styling */
+			.dashboard-cards {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.card {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 2rem;
+				border-radius: 4px;
+				transition: all 0.3s ease;
+				text-align: center;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.card:hover {
+				background: rgba(255, 255, 255, 0.15);
+				transform: translateY(-5px);
+			}
+
+			#phLevel, #turbidityValue, #flow1Value, 
+			#flow2Value, #leakageStatus {
+				font-size: 2.5rem;
+				margin: 1rem 0;
+				font-weight: bold;
+				color: #ffffff;
+			}
+
+			.status-text {
+				font-size: 1.2rem;
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.leakage-card-container {
+				margin-top: 2rem;
+				text-align: center;
+			}
+
+			h2.major {
+				border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+				padding-bottom: 0.5rem;
+				margin-bottom: 2rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="fas fa-tint fa-2x"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h2>Enhancing Water Security: Pipeline Leak Detection and Water Quality Monitoring Using Internet of Things (IoT)</h2>
+								<p>Real-time Water Monitoring System</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#login">Dashboard</a></li>
+								<li><a href="#about">About</a></li>
+								
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+
+
+						<article id="login">
+							<h2 class="major">Login</h2>
+							<form id="loginForm">
+								<div class="fields">
+									<div class="field">
+										<label for="username">Username</label>
+										<input type="text" name="username" id="username" required />
+									</div>
+									<div class="field">
+										<label for="password">Password</label>
+										<input type="password" name="password" id="password" required />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Login" class="primary" /></li>
+								</ul>
+							</form>
+						</article>
+
+						
+						
+
+						<!-- About -->
+						<article id="about">
+							<h2 class="major slide-in">About FlowGuard</h2>
+							
+							
+						
+							<div class="content-wrapper">
+								<!-- Project Overview -->
+								<section class="card fade-in">
+									<div class="icon-header">
+										<i class="fas fa-water fa-2x"></i>
+										<h3>Project Overview</h3>
+									</div>
+									<p class="animated-text">Developed at TUP Visayas, FlowGuard integrates:</p>
+									<ul class="feature-list">
+										<li><span class="bounce"></span> Real-time water quality monitoring</li>
+										<li><span class="bounce"></span> Instant pipeline leak detection</li>
+										<li><span class="bounce"></span> Cloud-based data analytics</li>
+										<li><span class="bounce"></span> Smart alert system</li>
+									</ul>
+								</section>
+						
+								<!-- Tech Specs -->
+								<section class="specs-grid">
+									<div class="spec-card slide-left">
+										<div class="spec-icon pulse">
+											<i class="fas fa-microchip"></i>
+										</div>
+										<h4>Hardware Core</h4>
+										<ul>
+											<li>NodeMCU-ESP32</li>
+											<li>YF-S201 Flow Sensors</li>
+											<li>PH Level Sensor</li>
+											<li>Turbidity Sensor</li>
+										</ul>
+									</div>
+						
+									<div class="spec-card slide-right">
+										<div class="spec-icon pulse">
+											<i class="fas fa-cloud"></i>
+										</div>
+										<h4>Tools</h4>
+										<ul>
+											<li>GoogleCloud SQL</li>
+											<li>Arduino IDE</li>
+											<li>HTML/JAVASCRIPT</li>
+											<li>PHP Backend</li>
+										</ul>
+									</div>
+								</section>
+						
+								<!-- Team Section -->
+								<section class="team-section">
+									<h3 class="section-title rotate">Development Team</h3>
+									
+									<div class="team-grid">
+										<div class="member-card">
+											<div class="avatar spin"></div>
+											<h5>Kylee Michael Castro</h5>
+											<p>Lead Hardware/Software Engineer</p>
+											<div class="social-links">
+												<a href="#"><i class="fab fa-github"></i></a>
+												<a href="#"><i class="fab fa-linkedin"></i></a>
+											</div>
+										</div>
+						
+										<div class="member-card">
+											<div class="avatar spin"></div>
+											<h5>Annie Vhee Paulino</h5>
+											<p><p>Lead Hardware/Software Engineer</p</p>
+											<div class="social-links">
+												<a href="#"><i class="fab fa-github"></i></a>
+												<a href="#"><i class="fab fa-linkedin"></i></a>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</article>
+						
+						<style>
+						/* Animations */
+						@keyframes slideIn {
+							from { transform: translateX(-100%); }
+							to { transform: translateX(0); }
+						}
+						
+						@keyframes scaleUp {
+							from { transform: scale(0.9); opacity: 0; }
+							to { transform: scale(1); opacity: 1; }
+						}
+						
+						@keyframes pulse {
+							0% { transform: scale(1); }
+							50% { transform: scale(1.1); }
+							100% { transform: scale(1); }
+						}
+						
+						.slide-in { animation: slideIn 1s ease-out; }
+						.scale-up { animation: scaleUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+						.pulse { animation: pulse 2s infinite; }
+						
+						/* Design Elements */
+						.hero-banner {
+							position: relative;
+							border-radius: 15px;
+							overflow: hidden;
+							box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+							transition: transform 0.3s;
+						}
+						
+						.hero-banner:hover {
+							transform: translateY(-5px);
+						}
+						
+						.overlay-text {
+							position: absolute;
+							bottom: 0;
+							background: linear-gradient(transparent, rgba(0,0,0,0.8));
+							color: white;
+							padding: 2rem;
+							width: 100%;
+						}
+						
+						.card {
+							background: rgba(255,255,255,0.1);
+							backdrop-filter: blur(10px);
+							border-radius: 12px;
+							padding: 2rem;
+							margin: 2rem 0;
+							transition: all 0.3s;
+						}
+						
+						.card:hover {
+							box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+							transform: translateY(-3px);
+						}
+						
+						.specs-grid {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+							gap: 2rem;
+							margin: 3rem 0;
+						}
+						
+						.spec-card {
+							background: rgba(255,255,255,0.05);
+							padding: 2rem;
+							border-radius: 10px;
+							border: 1px solid rgba(255,255,255,0.1);
+							transition: all 0.3s;
+						}
+						
+						.spec-card:hover {
+							background: rgba(255,255,255,0.1);
+							transform: scale(1.02);
+						}
+						
+						.spec-icon {
+							font-size: 2.5rem;
+							margin-bottom: 1rem;
+							color: #00ff88;
+						}
+						
+						.team-grid {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+							gap: 2rem;
+							margin-top: 2rem;
+						}
+						
+						.member-card {
+							text-align: center;
+							padding: 1.5rem;
+							background: rgba(255,255,255,0.05);
+							border-radius: 10px;
+						}
+						
+						.avatar {
+							width: 100px;
+							height: 100px;
+							background: #fff;
+							border-radius: 50%;
+							margin: 0 auto 1rem;
+						}
+						
+						.spin {
+							animation: spin 3s linear infinite;
+						}
+						
+						@keyframes spin {
+							from { transform: rotate(0deg); }
+							to { transform: rotate(360deg); }
+						}
+						
+						.social-links {
+							margin-top: 1rem;
+						}
+						
+						.social-links a {
+							color: #fff;
+							margin: 0 0.5rem;
+							transition: color 0.3s;
+						}
+						
+						.social-links a:hover {
+							color: #00ff88;
+						}
+						
+						.animated-text {
+							position: relative;
+							overflow: hidden;
+						}
+						
+						.animated-text::after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 2px;
+							background: #00ff88;
+							transform: scaleX(0);
+							transition: transform 0.3s;
+						}
+						
+						.animated-text:hover::after {
+							transform: scaleX(1);
+						}
+						
+						.rotate {
+							display: inline-block;
+							transform: rotate(-3deg);
+							transition: transform 0.3s;
+						}
+						
+						.rotate:hover {
+							transform: rotate(3deg);
+						}
+						</style>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; FlowGuard. By: Castro and Paulino <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+					e.preventDefault();
+					const username = document.getElementById('username').value;
+					const password = document.getElementById('password').value;
+
+					// Simple authentication
+					if (username === 'admin' && password === 'admin123') {
+						localStorage.setItem('authenticated', 'true');
+						window.location.href = 'daan.html';
+					} else {
+						alert('Invalid credentials! Please try again.');
+					}
+				});
+
+				// Protect dashboard access
+				window.addEventListener('hashchange', function() {
+					if (window.location.hash === '#dashboard' && !sessionStorage.getItem('authenticated')) {
+						window.location.hash = '#login';
+						alert('Please login to access the dashboard.');
+					}
+				});
+
+				// Initial check
+				if (window.location.hash === '#dashboard' && !sessionStorage.getItem('authenticated')) {
+					window.location.hash = '#login';
+				}
+				
+				
+			</script>
+	</body>
+</html>

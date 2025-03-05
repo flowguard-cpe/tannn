@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FlowGuard Dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<style>
+			/* Custom dashboard styling */
+			.dashboard-cards, .charts {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.card {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 2rem;
+				border-radius: 4px;
+				transition: all 0.3s ease;
+				text-align: center;
+			}
+
+			.chart {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 1.5rem;
+				border-radius: 4px;
+				text-align: center;
+			}
+
+			#phLevel, #turbidityValue, #flow1Value, 
+			#flow2Value, #leakageStatus {
+				font-size: 2.5rem;
+				margin: 1rem 0;
+				font-weight: bold;
+			}
+
+			.leakage-card-container {
+				margin-top: 2rem;
+				text-align: center;
+			}
+
+			/* Mobile-specific styles */
+			@media screen and (max-width: 768px) {
+				.dashboard-cards, .charts {
+					grid-template-columns: 1fr;
+				}
+
+				.card, .chart {
+					padding: 1rem;
+				}
+
+				#phLevel, #turbidityValue, #flow1Value, 
+				#flow2Value, #leakageStatus {
+					font-size: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-tint"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>FlowGuard</h1>
+								<p>Real-time Water Monitoring System</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#dashboard">Dashboard</a></li>
+								<li><a href="#about">About</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Dashboard -->
+							<article id="dashboard">
+								<h2 class="major">Dashboard</h2>
+								<div class="dashboard-cards">
+									<div class="card" id="peeH">
+										<h3>PH Level</h3>
+										<p id="phLevel">Loading...</p>
+										<p id="peee">Loading...</p>
+									</div>
+
+									<div class="card" id="Turbid">
+										<h3>Turbidity</h3>
+										<p id="turbidityValue">Loading...</p>
+										<p id="turbbb">Loading...</p>
+									</div>
+								</div>
+
+								<div class="charts">
+									<div class="chart">
+										<h3>Water Flow 1</h3>
+										<p id="flow1Value">Loading...</p>
+									</div>
+									<div class="chart">
+										<h3>Water Flow 2</h3>
+										<p id="flow2Value">Loading...</p>
+									</div>
+								</div>
+
+								<div class="leakage-card-container">
+									<div class="card" id="stat">
+										<h3>Leakage Status</h3>
+										<p id="leakageStatus">Loading...</p>
+										<p id="lek">Loading...</p>
+									</div>
+								</div>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>A Research Project Presented to the Faculty of the Computer Engineering Department College of Engineering Technological University of the Philippines Visayas</p>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; FlowGuard. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Original sensor data fetching script
+				document.addEventListener('DOMContentLoaded', function() {
+					async function fetchSensorData() {
+						// ... (keep your original JavaScript code here) ...
+					}
+
+					// Initial fetch
+					fetchSensorData();
+
+					// Fetch data every 5 seconds
+					setInterval(fetchSensorData, 5000);
+				});
+			</script>
+	</body>
+</html>

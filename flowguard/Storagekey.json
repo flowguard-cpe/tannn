@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sodium-foundry-452006-i6",
+  "private_key_id": "2c161463996ab93e1e1785875e93e2a65b7d9d07",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCerya5ImyX3idS\nJQ0Y56fIiyDukTr5ClUJu5Rs14FeMFS0K3tszlzNYZjnzqiOUiYrI94pDJlxpYeS\nesFtzjUEqaiciAY5F22CPDwHtDxLqFWj5iUo76k4l/xmCIG/gkZbv9DlXpvIltMo\noh9qiGYfgL4AlJmVf41+nfuJiyLuYhb4rBN5xmeSc6yR0zsZKXDDvfGGXGUZvxwG\nt6zsrbSEFU6nujoMDBsRxQnM5ry3r1uWa8JRF2xC8wIZ8bn1OGHM9DzdavJMhPo+\nwvBl1EE3Xf2EGgXmzGB9oPzYc46Wt61d3oqUFyXPOnMUZEtFQ9TZrMHY1Je7gAVG\n7H6QbVnBAgMBAAECggEABoUuJ0aItYNLdJLA62RuZp0/4smdJZlE9f/LCR9gSZNd\nEaOlQEro8Yf4eVLqpmFt/9ELGn7x6aNqcwx/+O/zif/iJZ9puQwTQ/oPYeYoIZg2\nv6Ov5HMXjhOhq3wfP7QdybyTm+8joc3/unBR7+XPo2z98aZpeqT5donNiYDp9CdL\nU1aVfQB4pKz1uTyZflLcAsJes1oTCr/mxTo+C2vj0Nn4PH+vhuv9vAsaPKxA8zpA\nVkWl5QqEnCTff4HuJuXu2dohZHv0XEMef+B+bV4uKOzYhdmn6IexyJ+pAyBis1nX\nmc4aws/25nwuLLp7MCLyNCRXyazAhslgmZ9fQIvzSQKBgQDTCsdfkkPbAqjyAAcs\nYEQJ4kgXzhgDAGiiwmNnolfaz75nRv0J0ORBXzTdHgECSX71BJWQHVFNcK96Pvaj\nANDSxtd7LfO4cJNVbi3HzMAleUlRQMbQA7OZ0RPLg9ldoHFaXBBn6ytKJppMx+MS\nBKSMdkM/VKL7mujOhmoMu+jqSQKBgQDAfQX6+DvFUFZv+MgscAS62RsdNQzjBleH\nhsFPFBU0+u8qvCPkfTl+dHcTBmHocangZ/AcApwHEDNhOPjREu+xXO7OAmCmmwcj\nsTMg+2ntIGPYAp2ocoRxm4c57jDNugLI3976wIYR7Bc9ZYcjNbNeYz3JSoVR4JjL\nEPw8VvOzuQKBgD46I2duvUtKkX4pu/O9vtIbQp6iSjo4WKIFJ0JbgAQo1T+mkt3e\nFi+gXvoD6tA9041zeJYxztNCsrsc7aRKjUhZERhlCEQODaNXBXCwUse554Bp1TVo\nogBswaV0jxcoQ8Qc+Ulq8iy/DSgumCmr7Mjt5g46aoQ9vP+IaqSuk5LhAoGBAI+l\nvazJS3G4vojZVCk1f5IhK0bkrDVQKkoNmn11M05SZeGyfeaqPRnNuH8OKErbaDb7\n2ghNOjtbL7zCU41TYGUwQVakF5S95NoSB2H5vdckcN5nNVjb/VL7CjOFOg6NXj6i\nMzlWK7d8ROugtPTlwnISBa4OWuf7gIsqpdIx4bShAoGAGqAJCGE37Vks9obA4LN9\nfZiunFQQ+vHJ/ME8Bc70GoZk7dovhIB5LS+w1GFg3zN9zAD/d7GWjH21E2a5EeLO\ni+QdJWOkiCBhSfQIvUei2JfZDDEGfVi18h8K6sRFPQmKApwK7uPe9gpAY/hlIXuV\nZxo70V+fguNOLeeNPvFVooo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "storageaccount-176@sodium-foundry-452006-i6.iam.gserviceaccount.com",
+  "client_id": "111512344912748264766",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storageaccount-176%40sodium-foundry-452006-i6.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

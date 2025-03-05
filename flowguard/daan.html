@@ -1,0 +1,382 @@
+<!-- Add this at the very beginning of daan.html -->
+<script>
+	// Check authentication status
+	if (!localStorage.getItem('authenticated')) {
+		window.location.href = 'index.html'; // Redirect to main page if not authenticated
+	}
+	
+	// Optional: Logout functionality
+	// Add a logout button in your dashboard that calls:
+	// localStorage.removeItem('authenticated');
+	// window.location.href = 'index.html';
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://storage.googleapis.com/flowsystem-com/styles.css">
+    <style>
+        /* Dark Mode Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e1e1e; /* Dark header background */
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #ffffff; /* Light text */
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        header nav ul li a {
+            color: #ffffff; /* Light text */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header nav ul li a:hover {
+            color: #bb86fc; /* Accent color for hover */
+        }
+
+        /* Add this to your existing styles */
+        html, body {
+            height: 100%; /* Ensure the body takes up the full height of the viewport */
+            margin: 0;
+            padding: 0;
+        }
+
+        #dashboard {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            min-height: calc(100vh - 120px); /* Full height minus header and footer */
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .dashboard-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1200px; /* Optional: Limit the maximum width of the cards */
+        }
+
+        .card {
+            background-color: #1e1e1e; /* Dark card background */
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: calc(33.33% - 1rem); /* 3 cards per row with gap */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #ffffff; /* Light text */
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff; /* Light text */
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            color: #ffffff; /* Light text */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1e1e1e; /* Dark footer background */
+            margin-top: 2rem;
+            color: #ffffff; /* Light text */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Warning Modal Styles */
+        .warning-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .warning-modal-content {
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .warning-modal-content h2 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        .warning-modal-content p {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-modal-content button {
+            background-color: #bb86fc;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .warning-modal-content button:hover {
+            background-color: #9b6fcf;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav">
+            <h1>WATER SECURITY DASHBOARD</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <article id="dashboard">
+        <div class="dashboard-cards">
+            <!-- PH Level Card -->
+            <div class="card" id="peeH">
+                <h3>PH Level</h3>
+                <p id="phLevel">Loading...</p>
+                <p id="peee" class="status-text">Loading...</p>
+            </div>
+
+            <!-- Turbidity Card -->
+            <div class="card" id="Turbid">
+                <h3>Turbidity</h3>
+                <p id="turbidityValue">Loading...</p>
+                <p id="turbbb" class="status-text">Loading...</p>
+            </div>
+
+            <!-- Water Quality Card -->
+            <div class="card" id="WaterQuality">
+                <h3>Water Quality</h3>
+                <p id="waterQualityStatus">Loading...</p>
+                
+            </div>
+
+            <!-- Water Flow 1 Card -->
+            <div class="card">
+                <h3>Water Flow 1</h3>
+                <p id="flow1Value">Loading...</p>
+            </div>
+
+            <!-- Water Flow 2 Card -->
+            <div class="card">
+                <h3>Water Flow 2</h3>
+                <p id="flow2Value">Loading...</p>
+            </div>
+
+            <!-- Leakage Status Card -->
+            <div class="card" id="stat">
+                <h3>Leakage Status</h3>
+                <h3><p id="lek" class="status-text">Loading...</p></h3> 
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Water Security Dashboard</p>
+    </footer>
+
+    <!-- Warning Modal -->
+    <div id="warningModal" class="warning-modal">
+        <div class="warning-modal-content">
+            <h2>Warning!</h2>
+            <p id="warningMessage"></p>
+            <button onclick="closeWarningModal()">Done</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Function to show warning modal
+        // Function to show warning modal
+function showWarningModal(message) {
+    // Get the current warning count from localStorage
+    let warningCount = localStorage.getItem('warningCount') || 0;
+    warningCount = parseInt(warningCount);
+
+    // Only show the warning if the count is less than 3
+    if (warningCount < 1) {
+        const modal = document.getElementById('warningModal');
+        const warningMessage = document.getElementById('warningMessage');
+        warningMessage.textContent = message;
+        modal.style.display = 'flex';
+
+        // Increment the warning count and save it to localStorage
+        warningCount++;
+        localStorage.setItem('warningCount', warningCount);
+    }
+}
+
+// Function to close warning modal
+function closeWarningModal() {
+    const modal = document.getElementById('warningModal');
+    modal.style.display = 'none';
+}
+
+// Reset the warning count when the dashboard is opened
+localStorage.setItem('warningCount', 0);
+
+// Original sensor data fetching script
+async function fetchSensorData() {
+    try {
+        const [response, wow1, wow2] = await Promise.all([
+            fetch('http://192.168.254.106/flowguard/getquality.php'),
+            fetch('http://192.168.254.106/flowguard/getflow1.php'),
+            fetch('http://192.168.254.106/flowguard/getflow2.php'),
+            fetch('http://192.168.254.106/flowguard/analysis_ph.php'),
+            fetch('http://192.168.254.106/flowguard/analysis_turb.php')
+        ]);
+
+        const data = await response.json();
+        const misig = await wow1.json();
+        const misigg = await wow2.json();
+
+        document.getElementById('flow1Value').textContent = Number(misig.fr1).toFixed(1);
+        document.getElementById('flow2Value').textContent = Number(misigg.fr2).toFixed(1);
+        document.getElementById('turbidityValue').textContent = data.Turbidity;
+        document.getElementById('phLevel').textContent = data.PH_level;
+
+        // Water Quality Status
+        const watqa = document.getElementById('WaterQuality');
+        const waterQualityStatus = document.getElementById('waterQualityStatus');
+        if (data.PH_level < 5 || data.Turbidity <= 1.5) {
+            waterQualityStatus.textContent = 'Unsafe';
+            watqa.style.backgroundColor = "red";
+            showWarningModal('Water Quality is Unsafe! | Seek Support: 09100942899');
+        } else {
+            waterQualityStatus.textContent = 'Safe';
+            watqa.style.backgroundColor = "green";
+        }
+
+        // Turbidity Status
+        let sem = 0;
+        if (data.Turbidity > 3) {
+            sem = 1;
+        } else if (data.Turbidity >= 1.5 && data.Turbidity <= 3) {
+            sem = 2;
+        } else if (data.Turbidity < 1.5) {
+            sem = 3;
+        }
+
+        // PH Level Status
+        let sam = 0;
+        if (data.PH_level < 6) {
+            sam = 1;
+        } else if (data.PH_level >= 6 && data.PH_level <= 8) {
+            sam = 2;
+        } else if (data.PH_level > 8) {
+            sam = 3;
+        }
+
+        // Fetch PH Analysis
+        if (sam > 0) {
+            const phDataResponse = await fetch(`http://192.168.254.106/flowguard/analysis_ph.php?id=${sam}`);
+            const phData = await phDataResponse.json();
+            document.getElementById('peee').textContent = phData.error ? phData.error : phData.ph_outcome;
+        }
+
+        // Fetch Turbidity Analysis
+        if (sem > 0) {
+            const turbDataResponse = await fetch(`http://192.168.254.106/flowguard/analysis_turb.php?id=${sem}`);
+            const turbData = await turbDataResponse.json();
+            document.getElementById('turbbb').textContent = turbData.error ? turbData.error : turbData.turbidity_outcome;
+        }
+
+        // Leakage Status
+        const stat = document.getElementById('stat');
+        const leakageStatus = document.getElementById('leakageStatus');
+        const flow1Value = parseFloat(misig.fr1);
+        const flow2Value = parseFloat(misigg.fr2);
+
+        if (Math.abs(flow1Value - flow2Value) > .2  ) {
+            leak = 2;
+            stat.style.backgroundColor = 'red';
+            showWarningModal('Warning: Leakage Detected!');
+            showWarningModal('Seek Support: 09100942899');
+        } else {
+            leak = 1;
+            stat.style.backgroundColor = 'green';
+        }
+
+        // Fetch Leakage Analysis
+        if (leak > 0) {
+            const lekDataResponse = await fetch(`http://192.168.254.106/flowguard/analysis_leak.php?id=${leak}`);
+            const lekData = await lekDataResponse.json();
+            document.getElementById('lek').textContent = lekData.error ? lekData.error : lekData.flow_outcome;
+        }
+
+    } catch (error) {
+        console.error("Error fetching sensor data:", error);
+    }
+}
+
+// Initial fetch
+fetchSensorData();
+
+// Fetch data every 2 seconds
+setInterval(fetchSensorData, 2000);
+    </script>
+</body>
+</html>
